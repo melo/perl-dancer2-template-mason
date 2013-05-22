@@ -1,0 +1,4 @@
+/Dancer2-Template-Mason-*
+.build
+.prove
+perltidy.LOG
