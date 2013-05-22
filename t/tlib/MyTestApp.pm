@@ -4,10 +4,18 @@ package    # Hide from PAUSE
 use Dancer2;
 
 set template => 'Mason';
-set layout   => undef;
+set layout   => 'basic';
 
 get '/one' => sub {
   template 'one', { name => 'world' };
+};
+
+get '/one_no_layout' => sub {
+  template 'one', { name => 'world'}, {layout => undef };
+};
+
+get '/one_other_layout' => sub {
+  template 'one', { name => 'world'}, {layout => 'other' };
 };
 
 true;
