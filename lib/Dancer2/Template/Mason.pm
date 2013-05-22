@@ -69,10 +69,10 @@ version 0.001
 C<config.yaml>:
 
     template: Mason
-    
+
     ## optionally
     layout: basic
-    
+
     engines:
       template:
         Mason:
@@ -91,7 +91,8 @@ A Dancer 2 application:
 
 This module provides the glue between L<Dancer2> and L<Mason>.
 
-Using it, your app views and layouts can be written using the Mason templating system.
+Using it, your app views and layouts can be written using the Mason
+templating system.
 
 Please note the following caveats:
 
@@ -99,53 +100,25 @@ Please note the following caveats:
 
 =item Extension support in Dancer2 is disabled
 
-This module ignore all the extension logic that L<Dancer2::Core::Role::Template> does. L<Mason> already takes care of managing extensions for you.
+This module ignore all the extension logic that
+L<Dancer2::Core::Role::Template> does. L<Mason> already takes care of
+managing extensions for you.
 
-=item 
+=back
+
+=encoding utf8
+
 =head1 METHODS
 
 =over
 
 =item render($template, $tokens)
 
-Renders a template using the L<Mason> engine. C<$template> can be one of:
-
-=over 2
-
-=item *
-
-a string of the path to a template file (*.tx, not *.tt like the core Dancer2
-template engines)
-
-=item *
-
-a reference to a string containing prerendered template content
-
-=back
-
-=back
-
-=encoding utf8
+Renders a template using the L<Mason> engine.
 
 =head1 SEE ALSO
 
-=over
-
-=item L<Dancer::Template::Xslate>
-
-Xslate rendering engine for Dancer 1.
-
-=back
-
-=head1 AUTHOR
-
-Richard Simões C<< <rsimoes AT cpan DOT org> >>
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright © 2013 Richard Simões. This module is released under the terms of the
-B<MIT License> and may be modified and/or redistributed under the same or any
-compatible license.
+L<Dancer2>, L<Mason>
 
 =head1 SUPPORT
 
