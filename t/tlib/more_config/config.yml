@@ -1,0 +1,15 @@
+appname: "MoreConfig"
+layout: "main"
+charset: "UTF-8"
+
+template: "Mason"
+
+engines:
+    Mason:
+        index_names:
+            - start.mp
+            - start.mc
+        plugins:
+            - DefaultFilter
+        default_filters:
+            - HTMLFilters
