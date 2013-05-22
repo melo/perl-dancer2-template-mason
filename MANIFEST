@@ -20,7 +20,6 @@ t/tlib/more_config/config.yml
 t/tlib/more_config/lib/MoreConfig.pm
 t/tlib/more_config/views/index.mc
 t/tlib/more_config/views/layouts/main.mc
-t/tlib/with_plugins/config.yml
 xt/author/test-eol.t
 xt/release/cpan-changes.t
 xt/release/dist-manifest.t
