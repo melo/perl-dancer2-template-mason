@@ -14,9 +14,7 @@ with "Dancer2::Core::Role::Template";
 
 has "+engine" => (isa => InstanceOf ["Mason::Interp"]);
 
-has "root_dir"       => (is => 'rwp');
-has "data_dir"       => (is => 'rwp');
-has "_data_dir_temp" => (is => 'rw');
+has "root_dir" => (is => 'rwp');
 
 sub _template_name { return $_[1] }    ## Skip extension processing in Mason
 
@@ -24,13 +22,11 @@ sub _build_engine {
   my ($self) = @_;
   my $config = $self->config || {};
   my %mason_config;
-  $self->_set_root_dir($mason_config{comp_root} = $config->{comp_root} || $self->views);
-  if (!$config->{data_dir}) {
-    $self->_data_dir_temp(my $t = File::Temp->newdir);
-    $config->{data_dir} = $t->dirname;
-  }
-  $self->_set_data_dir($mason_config{data_dir} = $config->{data_dir});
 
+  $mason_config{comp_root} = $config->{comp_root} || $self->views;
+  $mason_config{data_dir} = $config->{data_dir} if exists $config->{data_dir};
+
+  $self->_set_root_dir($mason_config{comp_root});
   return Mason->new(%mason_config);
 }
 
