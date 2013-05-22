@@ -46,3 +46,62 @@ sub render {
 }
 
 1;
+
+=encoding utf8
+
+=head1 SYNOPSIS
+
+C<config.yaml>:
+
+    template: Mason
+
+    ## optionally
+    layout: basic
+
+    engines:
+      template:
+        Mason:
+          ## Mason::Interp options
+
+A Dancer 2 application:
+
+    use Dancer2;
+
+    get /page/:number => sub {
+        my $page_num = params->{number};
+        template "foo", { page_num => $page_num };
+    };
+
+=head1 DESCRIPTION
+
+This module provides the glue between L<Dancer2> and L<Mason>.
+
+Using it, your app views and layouts can be written using the Mason
+templating system.
+
+Please note the following caveats:
+
+=over 4
+
+=item Extension support in Dancer2 is disabled
+
+This module ignore all the extension logic that
+L<Dancer2::Core::Role::Template> does. L<Mason> already takes care of
+managing extensions for you.
+
+=back
+
+
+=head1 METHODS
+
+=over
+
+=item render($template, $tokens)
+
+Renders a template using the L<Mason> engine.
+
+=head1 SEE ALSO
+
+L<Dancer2>, L<Mason>
+
+=cut
