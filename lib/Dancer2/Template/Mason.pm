@@ -21,12 +21,16 @@ sub _template_name { return $_[1] }    ## Skip extension processing in Mason
 sub _build_engine {
   my ($self) = @_;
   my $config = $self->config || {};
-  my %mason_config;
 
-  $mason_config{comp_root} = $config->{comp_root} || $self->views;
-  $mason_config{data_dir} = $config->{data_dir} if exists $config->{data_dir};
+  my %mason_config;
+  for my $cfg (keys %$config) {
+    next if $cfg eq 'environment' or $cfg eq 'location';
+    $mason_config{$cfg} = $config->{$cfg};
+  }
+  $mason_config{comp_root} = $self->views unless $mason_config{comp_root};
 
   $self->_set_root_dir($mason_config{comp_root});
+
   return Mason->new(%mason_config);
 }
 
