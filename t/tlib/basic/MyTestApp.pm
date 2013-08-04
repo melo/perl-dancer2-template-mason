@@ -11,11 +11,11 @@ get '/one' => sub {
 };
 
 get '/one_no_layout' => sub {
-  template 'one', { name => 'world'}, {layout => undef };
+  template 'one', { name => 'world' }, { layout => undef };
 };
 
 get '/one_other_layout' => sub {
-  template 'one', { name => 'world'}, {layout => 'other' };
+  template 'one', { name => 'world' }, { layout => 'other' };
 };
 
 true;

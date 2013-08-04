@@ -76,8 +76,8 @@ A Dancer 2 application:
 
 This module provides the glue between L<Dancer2> and L<Mason>.
 
-Using it, your app views and layouts can be written using the Mason
-templating system.
+Using it, your app views and layouts can be written using the Mason templating
+system.
 
 Please note the following caveats:
 
@@ -86,8 +86,8 @@ Please note the following caveats:
 =item Extension support in Dancer2 is disabled
 
 This module ignore all the extension logic that
-L<Dancer2::Core::Role::Template> does. L<Mason> already takes care of
-managing extensions for you.
+L<Dancer2::Core::Role::Template> does. L<Mason> already takes care of managing
+extensions for you.
 
 =back
 
@@ -99,6 +99,9 @@ managing extensions for you.
 =item render($template, $tokens)
 
 Renders a template using the L<Mason> engine.
+
+=back
+
 
 =head1 SEE ALSO
 

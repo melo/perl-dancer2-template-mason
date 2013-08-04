@@ -1,5 +1,5 @@
 <%class>
-has 'name';
+  has 'name';
 </%class>
 %
 one <% $self->name %>

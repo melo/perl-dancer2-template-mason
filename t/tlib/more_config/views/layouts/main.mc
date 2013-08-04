@@ -1,5 +1,5 @@
 <%class>
-has 'content';
+  has 'content';
 </%class>
 %
 <p><% $self->content %></p>
