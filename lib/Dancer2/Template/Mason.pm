@@ -4,7 +4,6 @@ package Dancer2::Template::Mason;
 # VERSION
 # AUTHORITY
 
-use utf8;
 use Moo;
 use Dancer2::Core::Types;
 use File::Temp;
