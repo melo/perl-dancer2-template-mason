@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use lib 't/tlib/more_config/lib';
 use Test::More;
+BEGIN { $ENV{DANCER_CONFDIR} = 't/tlib/more_config' }
 use MoreConfig;
 use Dancer2::Test apps => ['MoreConfig'];
 
