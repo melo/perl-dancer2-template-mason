@@ -1,7 +1,7 @@
 package    # Hide from PAUSE
   MoreConfig;
 
-use Dancer2 ':syntax';
+use Dancer2;
 
 get '/' => sub { template 'index' };
 
