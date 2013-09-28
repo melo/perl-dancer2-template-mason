@@ -6,7 +6,6 @@ package Dancer2::Template::Mason;
 
 use Moo;
 use Dancer2::Core::Types;
-use File::Temp;
 use Mason;
 
 with "Dancer2::Core::Role::Template";
